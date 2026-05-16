@@ -8,7 +8,7 @@ load_dotenv()
 
 # ─── Database URL ─────────────────────────────────────────────
 # Format: mysql+pymysql://user:password@host:port/dbname
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://root:password@localhost:3306/expense_db")
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://root:root@localhost:3306/expense_db")
 
 # ─── Engine ───────────────────────────────────────────────────
 engine = create_engine(DATABASE_URL)

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import auth, expenses
+from routes import auth, expenses, categories
 
 # ─── App Instance ─────────────────────────────────────────────
 app = FastAPI(
@@ -22,6 +22,7 @@ app.add_middleware(
 # ─── Routers ──────────────────────────────────────────────────
 app.include_router(auth.router)
 app.include_router(expenses.router)
+app.include_router(categories.router)
 
 # ─── Health Check ─────────────────────────────────────────────
 @app.get("/", tags=["Health"])
