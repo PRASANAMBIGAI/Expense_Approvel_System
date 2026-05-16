@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: expense_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: expense_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: expense_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      # Point to the "db" service defined above instead of localhost
+      - DATABASE_URL=mysql+pymysql://root:root@db:3306/expense_db
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: expense_frontend
+    restart: always
+    ports:
+      - "3000:80" # Maps port 3000 on your host to Nginx port 80
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

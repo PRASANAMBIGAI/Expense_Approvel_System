@@ -1,0 +1,90 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #1A56DB; /* Deep Trust Blue */
+  --color-primary-hover: #1E40AF;
+  --color-secondary: #64748B; /* Slate Gray */
+  --color-success: #10B981; /* Emerald Green */
+  --color-danger: #E11D48; /* Crimson Red */
+  
+  /* Backgrounds & Surfaces */
+  --color-background-base: #F8FAFC; /* Light Pearl/Off-White */
+  --color-surface: #FFFFFF; /* Pure White */
+  
+  /* Text */
+  --color-text-heading: #0F172A; /* Bold dark slate */
+  --color-text-body: #334155; /* Dark gray */
+  
+  /* Borders */
+  --color-border: #E2E8F0;
+  
+  /* Fonts */
+  --font-family-base: 'Inter', 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background-base);
+  color: var(--color-text-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-weight: 700;
+}
+
+/* Base Form Elements */
+input, select, textarea {
+  font-family: var(--font-family-base);
+}
+
+/* Base Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 6px -1px rgba(26, 86, 219, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-body);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #F1F5F9;
+}
+
+.btn-large {
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+}

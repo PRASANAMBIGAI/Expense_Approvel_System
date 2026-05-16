@@ -1,0 +1,118 @@
+.expense-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.detail-label {
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  flex: 0 0 120px;
+}
+
+.detail-value {
+  color: var(--color-text-heading);
+  font-weight: 500;
+  text-align: right;
+  flex: 1;
+}
+
+.detail-value.highlight {
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-value.text-block {
+  text-align: left;
+  background-color: var(--color-background-base);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-border);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 1rem 0;
+}
+
+.required {
+  font-size: 0.75rem;
+  color: var(--color-danger);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.action-error {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #059669; /* Emerald 600 */
+}
+
+.btn-danger-outline {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.btn-danger-outline:hover {
+  background-color: #FFF1F2; /* Rose 50 */
+}
+
+/* Inherit some generic form styles from EmployeeDashboard or Auth if needed, 
+   but ideally they go in global.css */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-heading);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-surface);
+  color: var(--color-text-heading);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
