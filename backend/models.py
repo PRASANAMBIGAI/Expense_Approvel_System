@@ -42,3 +42,11 @@ class Expense(Base):
     # ── Timestamps ──────────────────────────────────────────────
     created_at       = Column(DateTime, server_default=func.now(), nullable=False)
     updated_at       = Column(DateTime, onupdate=func.now(), nullable=True)
+
+# ─── Category Table ───────────────────────────────────────────
+class Category(Base):
+    __tablename__ = "categories"
+
+    id          = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    name        = Column(String(100), unique=True, nullable=False, index=True)
+    description = Column(String(500), nullable=True)

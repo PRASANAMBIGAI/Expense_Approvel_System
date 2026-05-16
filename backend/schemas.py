@@ -61,6 +61,22 @@ class ExpenseResponse(BaseModel):
         from_attributes = True
 
 # ══════════════════════════════════════════
+#          CATEGORY SCHEMAS
+# ══════════════════════════════════════════
+
+class CategoryCreate(BaseModel):
+    name        : str
+    description : Optional[str] = None
+
+class CategoryResponse(BaseModel):
+    id          : int
+    name        : str
+    description : Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+# ══════════════════════════════════════════
 #          APPROVAL ACTION SCHEMA
 # ══════════════════════════════════════════
 
